@@ -1,0 +1,2 @@
+avg_s = 5; rate = 1000; n_avg = avg_s * rate; n_sum_prev = Min(Row() - 1, n_avg); n_sum = Min(Row(), n_avg); prev_sum = If(Row() > 1, :vcc_in_w_avg[Row() - 1] * n_sum_prev, 0); cur_sum = (prev_sum + :VCC_IN_W) - If(Row() > n_avg, :VCC_IN_W[Row() - n_avg], 0); cur_sum / n_sum
+
